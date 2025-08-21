@@ -1,6 +1,6 @@
 /// --- GET DATA
 function getDatas() {
-  const url = "https://fullstack-learn-nu.vercel.app/siswa";
+  const url = "https://your-railway-backend.railway.app/api/siswa";
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
