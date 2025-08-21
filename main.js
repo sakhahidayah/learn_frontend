@@ -1,6 +1,6 @@
 /// --- GET DATA
 function getDatas() {
-  const url = "https://learnbackend-production-3f70.up.railway.app/siswa";
+  const url = "http://localhost:3000/siswa";
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function searchDatas(keyword) {
-  const url = `https://learnbackend-production-3f70.up.railway.app/siswa/search?q=${encodeURIComponent(keyword)}`;
+  const url = `http://localhost:3000/siswa/search?q=${encodeURIComponent(keyword)}`;
   fetch(url).then((response) => {
     response.json().then((data) => {
       const item = data.payload;
@@ -149,7 +149,7 @@ if (formSiswa) {
 
 function addData(nama, status, nik) {
   //   console.log(nik);
-  const url = "https://learnbackend-production-3f70.up.railway.app/siswa";
+  const url = "http://localhost:3000/siswa";
   fetch(url, {
     method: "POST",
     headers: {
@@ -203,7 +203,7 @@ if (deleteBtn) {
     if (!currentDatas.id) {
       showToast("Data is not selected!!", "#ef4444", 1500);
     } else {
-      const url = "https://learnbackend-production-3f70.up.railway.app/siswa";
+      const url = "http://localhost:3000/siswa";
       fetch(url, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function editShow(id) {
-  const url = `https://learnbackend-production-3f70.up.railway.app/siswa/${id}`;
+  const url = `http://localhost:3000/siswa/${id}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -298,7 +298,7 @@ if (addBtnEdit) {
       return;
     }
 
-    const url = "https://learnbackend-production-3f70.up.railway.app/siswa/update";
+    const url = "http://localhost:3000/siswa/update";
     fetch(url, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
